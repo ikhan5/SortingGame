@@ -3,9 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="395120795264-ojtqea5s9vsa1b7eaa0mno0h8h9d43do.apps.googleusercontent.com">
-    <!--Online-->
-    <!-- <meta name="google-signin-client_id" content="395120795264-m9cd1g2n8ugjrkt2evc95ur2r5q5r4v7.apps.googleusercontent.com"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sorting Game</title>
