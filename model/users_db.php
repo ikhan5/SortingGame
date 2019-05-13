@@ -81,6 +81,8 @@ class UserDB
         $status = $pst->execute();
         $pst->closeCursor();
 
+        // var_dump($status);
+        // exit();
         UserDB::setHighScore($username, $score);
 
         return $status;
@@ -114,20 +116,15 @@ class UserDB
 
     public static function setHighScore($username, $score)
     {
-        var_dump($score);
-        exit();
         $dbcon = Database::getDB();
         $id = UserDB::getUserID($username);
         $sql = "SELECT high_score from users where id = :id";
         $pst = $dbcon->prepare($sql);
         $pst->bindParam(":id", $id, PDO::PARAM_INT);
         $pst->execute();
-        $hs = $pst->fetch(PDO::FETCH_OBJ);
+        $hs = $pst->fetch(PDO::FETCH_ASSOC);
         $pst->closeCursor();
-        $high_score = intval($hs[0]);
-
-        var_dump($high_score);
-        die();
+        $high_score = intval($hs['high_score']);
 
         if ($score > $high_score) {
             $sql = "UPDATE users SET high_score = :score where id=:id";

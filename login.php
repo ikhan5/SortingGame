@@ -3,7 +3,7 @@
  * Feature: Sorting Game
  * Description: Interface for User to Sign In
  * Date Created: April 20th, 2019
- * Last Modified: mAY 12th, 2019
+ * Last Modified: May 12th, 2019
  * Recent Changes: Added manual Login and Registration
  */
 require_once('./model/Database.php');
@@ -96,7 +96,7 @@ if (isset($_POST['register'])) {
                 <div class="form-group">
                     <label class="mr-1 text-light" for="reg_username">Username: </label>
                     <div class="col-sm-10">
-                        <input placeholder="Usernames must be at least 6 characters long" minlength="6" maxlength="20" size="20" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$" value="<?= htmlspecialchars($reg_username) ?>" class="form-control" type="text" id="reg_username" name="reg_username" required />
+                        <input placeholder="Usernames must be at least 4 characters long" minlength="4" maxlength="20" size="20" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$" value="<?= htmlspecialchars($reg_username) ?>" class="form-control" type="text" id="reg_username" name="reg_username" required />
                     </div>
                 </div>
                 <div class="form-group">

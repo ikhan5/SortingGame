@@ -15,7 +15,7 @@ echo '<div id="background" alt="Photo by Aditya Vyas on Unsplash"></div>';
 ?>
 
 <div class="table-responsive-sm">
-    <table class="table table-hover text-center table-striped table-dark my-3 w-50 mx-0 mx-auto">
+    <table class="table table-hover text-center table-striped table-dark my-5 w-75 mx-0 mx-auto">
         <thead>
             <tr>
                 <th>#</th>
@@ -28,8 +28,8 @@ echo '<div id="background" alt="Photo by Aditya Vyas on Unsplash"></div>';
             $i = 1;
             foreach ($scores as $score) {
                 if ($i == 1) {
-                    echo "<tr class='bg-warning'>";
-                    echo "<td>High Score</td>";
+                    echo "<tr class='bg-warning text-dark'>";
+                    echo "<td><i class='fas fa-crown'></i> High Score</td>";
                     $i++;
                 } else {
                     echo "<tr>";

@@ -14,8 +14,8 @@ if (!isset($_SESSION)) {
   session_start();
 }
 $username = $_SESSION['username'];
-$score = $_POST['score'];
+// $score = $_POST['score'];
 $u = new UserDB();
-$score = $u->insertScore($username, $score);
+$score = $u->insertScore($username, 21);
 
 echo $score['score'];

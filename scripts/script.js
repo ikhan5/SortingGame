@@ -66,7 +66,7 @@ function roundOver(score) {
   $(".question").html("Correct!");
   $("#restart").show();
 
-  if (player1.round === 5) {
+  if (player1.round === 2) {
     $.ajax({
       url: "updateScore.php",
       method: "POST",
