@@ -23,7 +23,7 @@ $username = $_SESSION['username'];
     <p class="text-white" id="scoreDisplay">Total Score: <span id="score"></span></p>
     <div class="game_header text-center mt-3">
         <h1 id="version">Game of Thrones</h1>
-        <div class="row">
+        <div class="row round-info">
             <p class="text-white col-md-6" id="roundDisplay">Round: <span id="round"></span> of 5</p>
             <div class="timer text-white col-md-6"></div>
         </div>

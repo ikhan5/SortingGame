@@ -109,6 +109,10 @@
   overflow: auto;
 }
 
+.third {
+  background-color: brown !important;
+}
+
 
 
 /*******************************************MEDIA QUERIES*******************************************/

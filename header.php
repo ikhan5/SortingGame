@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sorting Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -20,7 +21,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="index.php" class="nav-link">Sorting Game</a></li>
-                <li class="nav-item"><a href="scores.php" class="nav-link">High Scores</a></li>
+                <li class="nav-item"><a href="scores.php" class="nav-link">My Scores</a></li>
+                <li class="nav-item"><a href="highscores.php" class="nav-link">Leaderboard</a></li>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right">

@@ -100,8 +100,22 @@ class UserDB
         return $score;
     }
 
+    public static function getAllHighScores()
+    {
+        $dbcon = Database::getDB();
+        $sql = "SELECT * from users ORDER BY high_score DESC";
+        $pst = $dbcon->prepare($sql);
+        $pst->execute();
+        $high_scores = $pst->fetchAll(PDO::FETCH_OBJ);
+        $pst->closeCursor();
+
+        return $high_scores;
+    }
+
     public static function setHighScore($username, $score)
     {
+        var_dump($score);
+        exit();
         $dbcon = Database::getDB();
         $id = UserDB::getUserID($username);
         $sql = "SELECT high_score from users where id = :id";
