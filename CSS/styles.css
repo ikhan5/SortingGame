@@ -5,7 +5,7 @@
 #body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  background-image: url("aditya-vyas-1162182-unsplash.jpg");
+  background-image: url("../assets/aditya-vyas-1162182-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,15 +37,7 @@
 #login_container {
   margin-top: 100px;
   margin-bottom: 100px;
-  min-width: 400px;
-  height: 100vh;
   width: 65vw;
-}
-
-.login {
-  border: solid 4px white;
-  width: 65vw;
-  padding: 50px 100px;
 }
 
 .welcome {
@@ -54,13 +46,14 @@
 
 #version {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
+  margin: 0;
 }
 
 /*******************************************GAME*******************************************/
 
 #game_container {
-  height: 100vh;
+  height: 700px;
 }
 
 .game_header {
@@ -86,10 +79,10 @@
 .container {
   max-width: 680px;
   margin: 0 auto;
-  min-height: 500px;
 }
 
-.option {
+.option,
+.tut_option {
   border-radius: 25px;
   text-align: center;
   list-style: none;
@@ -104,18 +97,61 @@
 }
 
 /*******************************************SCORE DISPLAY*******************************************/
+.highscores,
 .scores {
-  height: 400px;
-  overflow: auto;
+  width: 90%;
+}
+
+.scores_container,
+.highscores_container {
+  height: 700px;
 }
 
 .third {
   background-color: brown !important;
 }
 
+.round-info {
+  margin-top: 20px;
+  font-size: 2em;
+}
 
+.ranks {
+  width: 400px;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 2em;
+}
+
+#results_container {
+  display: none;
+  position: absolute;
+  opacity: 0.93;
+  width: 50vw;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin: 0 auto;
+  z-index: 10000;
+}
+
+.game_stats {
+  width: 100%;
+  margin-top: 50px;
+  padding-left: 20px;
+  font-size: 1.5vw;
+}
+
+.game_stats span {
+  float: right;
+}
 
 /*******************************************MEDIA QUERIES*******************************************/
+
+
 @media only screen and (max-width: 1000px) {
   #scoreDisplay {
     position: initial;
@@ -140,6 +176,25 @@
   .login {
     padding: 20px 50px;
   }
+
+  #results_container {
+    width: 75vw;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  #roundDisplay {
+    margin: 0;
+  }
+
+  #results_container {
+    width: 95vw;
+  }
+
+  .game_stats {
+    font-size: 2.5vw;
+  }
 }
 
 @media only screen and (max-width: 474px) {
@@ -161,6 +216,18 @@
 }
 
 @media only screen and (max-width: 460px) {
+  .rank {
+    font-size: 1em;
+  }
+
+  .round-info {
+    font-size: 1em;
+  }
+
+  .question {
+    font-size: 1.2em;
+  }
+
   .welcome {
     font-size: 6vw;
   }
@@ -168,4 +235,6 @@
   #version {
     font-size: 5.5vw;
   }
+
+
 }

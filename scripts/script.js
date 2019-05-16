@@ -5,9 +5,8 @@
  *              with the Game of Thrones API, and
  *              OAuth 2.0 Google Sign In API.
  * Date Created: April 20th, 2019
- * Last Modified: April 26th, 2019
- * Recent Changes: Added Comments, removed
- *                 unnecessary code blocks
+ * Last Modified: May 15th, 2019
+ * Recent Changes: Fixed Average Time in End Results display
  */
 
 // Clicking the 'Ready?' button initiates the sorting game
@@ -22,7 +21,14 @@ $("#restart").on("click", function () {
   $("#start").attr("disabled", false);
   $("#restart").hide();
   $("#options").empty();
+  $("#options").show();
   $("#start").show();
+  $("#restart").html("Next Round");
+});
+
+
+$(".close").on("click", function () {
+  $("#results_container").hide();
 });
 
 // When the index page loads, the players score associated with their
@@ -47,6 +53,7 @@ function Player() {
 }
 var player1 = new Player();
 
+
 function updateDisplay() {
   $("#score").html(player1.score);
   $("#round").html(player1.round);
@@ -65,10 +72,9 @@ function roundOver(score) {
   $("#submit").attr("disabled", true);
   $(".question").html("Correct!");
   $("#restart").show();
-
-  if (player1.round === 2) {
+  if (player1.round === 5) {
     $.ajax({
-      url: "updateScore.php",
+      url: "./functions/updateScore.php",
       method: "POST",
       data: {
         score: player1.score
@@ -82,11 +88,15 @@ function gameOver() {
   $("#options").sortable({
     disabled: true
   });
+  $("#options").hide();
   $("#start").hide();
   $("#submit").hide();
   $("#submit").attr("disabled", true);
-  $(".question").html("Try Again?");
-  // $("#restart").show();
+  $(".question").html("Viewing Game Results");
+  $("#restart").html("Start New Game?");
+  $("#finalScoreDisplay").html(player1.score);
+  $("#averageTimeDisplay").html((30 - (player1.score / player1.round)).toFixed(2) + " secs");
+  $("#results_container").show();
   player1.resetGame();
 }
 
@@ -96,6 +106,7 @@ function gameOver() {
 function startGame() {
   let testKey = [];
   var testStr = "t";
+  var testCompareStr = "tc";
 
   $(".timer").timer("remove");
   updateDisplay();
@@ -139,6 +150,7 @@ function startGame() {
       testCompareStr = testKey.sort().toString();
     }
   });
+
   //When the user wishes to submit their sorted answers, the order string and answer
   // string are compared, when correct , that round is over, and the strings are
   // initialized to arbitrary values. These values do not matter, they are just used
@@ -149,8 +161,16 @@ function startGame() {
       var score = $(".timer").data("seconds");
       $(".timer").timer("pause");
       testStr = "t";
+      testCompareStr = "ta";
       player1.updateRound();
       roundOver(score);
+    }
+
+    if ($(".timer").data("seconds") === 0) {
+      $(".timer").timer("pause");
+      testStr = "t";
+      player1.updateRound();
+      roundOver(0);
     }
   });
 

@@ -21,8 +21,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="index.php" class="nav-link">Sorting Game</a></li>
-                <li class="nav-item"><a href="scores.php" class="nav-link">My Scores</a></li>
-                <li class="nav-item"><a href="highscores.php" class="nav-link">Leaderboard</a></li>
+                <li class="nav-item"><a href="scores.php?page=1" class="nav-link">My Scores</a></li>
+                <li class="nav-item"><a href="highscores.php?page=1" class="nav-link">Leaderboard</a></li>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right">
@@ -30,9 +30,9 @@
             //When a user is signed in, the navbar displays their email with an option to logout,
             // otherwise a link to the login form is displayed. 
             if (!(isset($_SESSION['username']))) {
-                echo '<li class="nav-item"><a href="index.php">Login</a></li>';
+                echo '<li class="nav-item"><a href="index.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>';
             } else {
-                echo '<li class="nav-item"><span class="text-white mr-4">Hello, ' . $_SESSION['username'] . '!</span><a href="logout.php">Logout <i class="fas fa-sign-out-alt"></i></a></li>';
+                echo '<li class="nav-item"><span class="text-white mr-4">Hello, ' . $_SESSION['username'] . '!</span><a href="./functions/logout.php">Logout <i class="fas fa-sign-out-alt"></i></a></li>';
             }
             ?>
         </ul>
