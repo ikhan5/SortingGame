@@ -14,9 +14,66 @@ $("#start").on("click", function () {
   startGame();
 });
 
+$("#tut_start").on("click", function () {
+  startTutorial();
+});
+
+
+function startTutorial() {
+  $(".tut_question").removeClass("correct");
+  $("#tut_submit").show();
+  $("#tut_start").attr("disabled", true);
+  $("#tut_options").sortable();
+  $("#tut_options").sortable({
+    disabled: false
+  });
+  let tut_answer = [];
+  let tut_answerKey = "Arya Stark,Daenerys Targaryen,Jon Snow,Sansa Stark,Tyrion Lannister";
+
+  $("#tut_options").sortable({
+    update: function (event, ui) {
+      tut_answer.length = 0;
+      $(".tut_option").each(function (i) {
+        let test = $(".tut_option")
+          .eq(i)
+          .html();
+        tut_answer.push(test);
+      });
+      tutStr = tut_answer.toString();
+    }
+  });
+
+  $("#tut_submit").on("click", function () {
+    if (tutStr === tut_answerKey) {
+      $("#tut_options").sortable({
+        disabled: true
+      });
+      tutStr = "t";
+      $(".tut_question").html("Correct! You're ready to take the throne!")
+      $(".tut_question").addClass("correct");
+      $("#tut_restart").show();
+      $("#tut_submit").hide();
+    }
+  });
+  $("#tut_restart").on("click", function () {
+    $("#tut_options").html(`<li class="tut_option list-group-item-dark p-2 my-2">Jon Snow</li>
+    <li class="tut_option list-group-item-dark p-2 my-2">Arya Stark</li>
+    <li class="tut_option list-group-item-dark p-2 my-2">Sansa Stark</li>
+    <li class="tut_option list-group-item-dark p-2 my-2">Daenerys Targaryen</li>
+    <li class="tut_option list-group-item-dark p-2 my-2">Tyrion Lannister</li>`);
+
+    $(".tut_question").html("Order the following characters in alphabetical order:")
+    $(".tut_question").removeClass("correct");
+    $("#tut_restart").hide();
+    $("#tut_start").attr("disabled", false);
+    $("#tut_options").sortable();
+  });
+}
+
 // Clicking the 'Play Again?' button starts a new game and
 // re-initializes the question and buttons
 $("#restart").on("click", function () {
+  $(".question").removeClass("correct");
   $(".question").html("Order the following characters in alphabetical order:");
   $("#start").attr("disabled", false);
   $("#restart").hide();
@@ -71,6 +128,7 @@ function roundOver(score) {
   $("#submit").hide();
   $("#submit").attr("disabled", true);
   $(".question").html("Correct!");
+  $(".question").addClass("correct");
   $("#restart").show();
   if (player1.round === 5) {
     $.ajax({
@@ -164,13 +222,6 @@ function startGame() {
       testCompareStr = "ta";
       player1.updateRound();
       roundOver(score);
-    }
-
-    if ($(".timer").data("seconds") === 0) {
-      $(".timer").timer("pause");
-      testStr = "t";
-      player1.updateRound();
-      roundOver(0);
     }
   });
 

@@ -34,8 +34,9 @@ if (!isset($username)) {
 echo '<div id="background" alt="Photo by Aditya Vyas on Unsplash"></div>';
 ?>
 <div class="container-fluid scores_container">
+    <h2 class="display-5 text-light mt-2 text-center">My Scores</h2>
     <div class="table-responsive-sm">
-        <table class="scores table table-hover text-center table-striped table-dark my-5 mx-2 mx-auto">
+        <table class="scores table table-hover text-center table-striped table-dark my-3 mx-2 mx-auto">
             <thead>
                 <tr>
                     <th>#</th>

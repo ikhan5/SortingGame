@@ -20,9 +20,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="index.php" class="nav-link">Sorting Game</a></li>
+                <li class="nav-item text-warning"><a href="index.php" class="nav-link">Sorting Game</a></li>
                 <li class="nav-item"><a href="scores.php?page=1" class="nav-link">My Scores</a></li>
                 <li class="nav-item"><a href="highscores.php?page=1" class="nav-link">Leaderboard</a></li>
+                <li class="nav-item"><a href="tutorial.php" class="nav-link">Tutorial</a></li>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right">

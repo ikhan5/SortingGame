@@ -16,7 +16,7 @@ require_once 'model/users_db.php';
 include("header.php");
 
 $pagenum = $_GET['page'];
-$per_page = 5;
+$per_page = 10;
 
 $s = new ScoreDB();
 $high_scores = $s->getTotalHighScoreCount();
@@ -27,8 +27,9 @@ $scores = $s->getAllHighScores($pagenum, $per_page);
 echo '<div id="background" alt="Photo by Aditya Vyas on Unsplash"></div>';
 ?>
 <div class="container-fluid highscores_container">
+    <h2 class="display-5 text-light mt-2 text-center">Global Leaderboard</h2>
     <div class="table-responsive-sm">
-        <table class="highscores table table-hover text-center table-striped table-dark my-5 mx-0 mx-auto">
+        <table class="highscores table table-hover text-center table-striped table-dark my-3 mx-0 mx-auto">
             <thead>
                 <tr>
                     <th>Rank</th>

@@ -33,7 +33,7 @@ if (isset($_POST['activation_code'])) {
         $code_errors = "Invalid Code, please try again.";
     }
 }
-if ($activated) {
+if ($activated || !(isset($_SESSION['username']))) {
     header("Location: index.php");
 }
 
@@ -43,7 +43,7 @@ echo '<div id="background" alt="Photo by Aditya Vyas on Unsplash"></div>';
     <div class="jumbotron">
         <h1 class="display-4">Email Activation</h1>
         <p class="text-danger"><strong><?= $code_errors ?></strong></p>
-        <p class="lead">Please check your email and enter your activation code. Email may take 1-2 minutes.</p>
+        <p class="lead">Please check your email and enter your activation code. Email may take 1-2 minutes. You can try out the <a href="tutorial.php">tutorial</a> as you wait!</p>
         <form action="activate.php" method="POST">
             <input maxLength='6' class="p-1" type="text" name="activation_code" />
             <button class="btn btn-info" type="submit" name="submit">OK</button>

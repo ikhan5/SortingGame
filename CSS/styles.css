@@ -17,17 +17,23 @@
 
 #start,
 #submit,
-#restart {
+#restart,
+#tut_submit,
+#tut_start,
+#tut_restart {
   border-radius: 25px;
   font-size: 1.4em;
 }
 
 #submit,
-#restart {
+#tut_submit,
+#restart,
+#tut_restart {
   color: #fff;
   display: none;
 }
 
+#tut_submit,
 #submit {
   background: green;
 }
@@ -51,7 +57,7 @@
 }
 
 /*******************************************GAME*******************************************/
-
+#tut_container,
 #game_container {
   height: 700px;
 }
@@ -71,6 +77,7 @@
   margin-left: 5px;
 }
 
+.tut_question,
 .question {
   font-family: "Raleway", sans-serif;
   font-size: 2vw;
@@ -94,6 +101,10 @@
 
 .option:hover {
   color: #fff;
+}
+
+.correct {
+  color: rgb(15, 255, 15) !important;
 }
 
 /*******************************************SCORE DISPLAY*******************************************/
@@ -165,6 +176,7 @@
     font-size: 4.5vw;
   }
 
+  .tut_question,
   .question {
     font-size: 3vw;
   }
@@ -224,6 +236,7 @@
     font-size: 1em;
   }
 
+  .tut_question,
   .question {
     font-size: 1.2em;
   }
