@@ -40,7 +40,7 @@ $mail->isSMTP();
 $mail->Port = '587';
 $mail->SMTPAuth = true;
 $mail->Username = "sorting@imzankhan.ca";
-$mail->Password = "*3uU([Z6AI20";
+$mail->Password = "";
 $mail->SMTPSecure = 'tls';
 $mail->setFrom('sorting@imzankhan.ca', 'Sorting Game');
 $mail->addAddress($email, $username);
