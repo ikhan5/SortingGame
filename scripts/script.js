@@ -16,6 +16,8 @@ $("#start").on("click", function () {
 
 $("#tut_start").on("click", function () {
   startTutorial();
+  $(".instruction_start").hide();
+  $(".tut_question").show();
 });
 
 
@@ -32,6 +34,7 @@ function startTutorial() {
 
   $("#tut_options").sortable({
     update: function (event, ui) {
+      $(".instruction_submit").show();
       tut_answer.length = 0;
       $(".tut_option").each(function (i) {
         let test = $(".tut_option")
@@ -53,6 +56,7 @@ function startTutorial() {
       $(".tut_question").addClass("correct");
       $("#tut_restart").show();
       $("#tut_submit").hide();
+      $(".instruction_submit").hide();
     }
   });
   $("#tut_restart").on("click", function () {

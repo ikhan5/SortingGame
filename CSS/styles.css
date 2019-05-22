@@ -99,12 +99,34 @@
   user-select: none;
 }
 
+.tut_question {
+  display: none;
+}
+
 .option:hover {
   color: #fff;
 }
 
 .correct {
   color: rgb(15, 255, 15) !important;
+}
+
+#instructions {
+  font-size: 2em;
+  text-align: center;
+}
+
+.instruction_submit {
+  display: none;
+}
+
+.arrow,
+.arrow_submit {
+  margin-bottom: 0;
+}
+
+.arrow_submit {
+  margin-left: 100px;
 }
 
 /*******************************************SCORE DISPLAY*******************************************/

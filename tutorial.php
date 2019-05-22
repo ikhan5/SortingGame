@@ -12,7 +12,7 @@ include("header.php");
 ?>
 <div id="tut_container">
     <h1 class="display-5 text-light mt-2 text-center game_header">Tutorial</h1>
-    <h2 class="tut_question display-5 text-light mt-2 text-center">Order the following characters in alphabetical order by dragging the names into place:</h2>
+    <h2 class="tut_question text-light mt-2 text-center">Order the following characters in alphabetical order by dragging the names into place:</h2>
     <div class="container">
         <ul id="tut_options" class="list-group">
             <li class="tut_option list-group-item-dark p-2 my-2">Jon Snow</li>
@@ -27,6 +27,19 @@ include("header.php");
             <button id="tut_submit" class="btn mt-2 px-5">Submit</button>
         </div>
     </div>
+    <div id="instructions">
+        <div class="instruction_start text-light">
+            <p class="arrow"><i class="fas fa-long-arrow-alt-up"></i></p>
+            <p>Click the Ready Button to start the game!</p>
+        </div>
+        <div class="instruction_submit text-light ">
+            <p class="arrow_submit"><i class="fas fa-long-arrow-alt-up"></i></p>
+            <p>Click the Submit Button when you wish to submit your answer!</p>
+        </div>
+    </div>
+
+
+</div>
 </div>
 <?php
 include("footer.php");
