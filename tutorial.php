@@ -12,7 +12,7 @@ include("header.php");
 ?>
 <div id="tut_container">
     <h1 class="display-5 text-light mt-2 text-center game_header">Tutorial</h1>
-    <h2 class="tut_question display-5 text-light mt-2 text-center">Order the following characters in alphabetical order:</h2>
+    <h2 class="tut_question display-5 text-light mt-2 text-center">Order the following characters in alphabetical order by dragging the names into place:</h2>
     <div class="container">
         <ul id="tut_options" class="list-group">
             <li class="tut_option list-group-item-dark p-2 my-2">Jon Snow</li>
