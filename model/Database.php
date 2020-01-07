@@ -12,7 +12,7 @@ class Database
 {
     //__construct access modifier private and properties static
     private static $user = 'ikhan_admin';
-    private static $pass = 'OzKP8C@q@52H';
+    private static $pass = '';
     private static $db = 'SortingGame';
     private static $dsn = 'mysql:host=198.71.236.85;dbname=SortingGame'; //what db we are connecting to
 
